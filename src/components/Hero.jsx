@@ -170,22 +170,18 @@ export default function Hero({ onThemeClick }) {
               
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#38bdf8]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[#38bdf8]/25 transition-all" />
 
-              {/* Circular Avatar */}
+              {/* Circular Avatar with Ankit Verma's Actual Photo */}
               <div className="relative mb-6">
                 <div className="w-36 h-36 rounded-full p-1 bg-gradient-to-tr from-[#38bdf8] via-blue-500 to-indigo-500 shadow-[0_0_30px_rgba(56,189,248,0.4)]">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#07090e] flex items-center justify-center">
                     <img
-                      src="developer_avatar.png"
+                      src="developer_avatar.jpg"
                       alt="Ankit Verma"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-top"
                       onError={(e) => {
-                        e.target.style.display = 'none';
-                        if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                        e.target.src = 'developer_avatar.png';
                       }}
                     />
-                    <div className="hidden w-full h-full bg-[#0b101a] items-center justify-center font-extrabold text-3xl text-[#38bdf8]">
-                      AV
-                    </div>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Palette, ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
+import { FileText, Palette, ChevronDown, Menu, X } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ activeTheme, setActiveTheme }) {
@@ -61,7 +61,7 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
                 key={link.name}
                 href={link.href}
                 className={`relative py-1 text-sm font-medium transition-colors ${
-                  isActive ? 'text-white font-semibold' : 'text-slate-400 hover:text-white'
+                  isActive ? 'text-[#38bdf8] font-bold' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -73,17 +73,17 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
           })}
         </div>
 
-        {/* Right Controls: GitHub Hosted Resume Button + Theme Selector */}
+        {/* Right Controls: Show CV Button + Theme Selector */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href={personal.resumeLink}
             target="_blank"
             rel="noreferrer"
-            className="btn-resume text-xs sm:text-sm px-4 py-2 cursor-pointer"
-            title="Open Ankit Verma's Official Resume on GitHub"
+            className="btn-resume text-xs sm:text-sm px-4 py-2 cursor-pointer flex items-center gap-1.5"
+            title="Open Ankit Verma's Official CV on GitHub"
           >
-            <Download size={15} />
-            <span>Download CV</span>
+            <FileText size={15} />
+            <span>Show CV</span>
           </a>
 
           {/* Theme Selector Dropdown */}
@@ -125,11 +125,11 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
             href={personal.resumeLink}
             target="_blank"
             rel="noreferrer"
-            className="btn-resume text-xs px-3 py-1.5"
-            title="Download Resume"
+            className="btn-resume text-xs px-3 py-1.5 flex items-center gap-1"
+            title="Show CV"
           >
-            <Download size={14} />
-            <span>Download</span>
+            <FileText size={14} />
+            <span>Show CV</span>
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Rocket, Send, RotateCw, Languages, Eye, Download, ExternalLink, X } from 'lucide-react';
+import { FileText, Rocket, Send, RotateCw, Languages } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Hero({ onThemeClick }) {
@@ -23,7 +23,6 @@ export default function Hero({ onThemeClick }) {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [animating, setAnimating] = useState(false);
-  const [showResumeModal, setShowResumeModal] = useState(false);
 
   const currentGreeting = indianGreetings[langIndex];
 
@@ -120,14 +119,17 @@ export default function Hero({ onThemeClick }) {
 
             {/* 3 Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button 
-                onClick={() => setShowResumeModal(true)}
+              {/* Show CV Button */}
+              <a 
+                href={personal.resumeLink}
+                target="_blank"
+                rel="noreferrer"
                 className="btn-resume text-sm px-5 py-2.5 cursor-pointer shadow-[0_0_20px_rgba(56,189,248,0.4)] flex items-center gap-2"
-                title="View Ankit Verma's Resume on page"
+                title="Open Ankit Verma's Official CV"
               >
-                <Eye size={16} />
-                <span>Show Resume</span>
-              </button>
+                <FileText size={16} />
+                <span>Show CV</span>
+              </a>
 
               <a
                 href="#projects"
@@ -199,72 +201,6 @@ export default function Hero({ onThemeClick }) {
 
         </div>
       </div>
-
-      {/* Interactive Resume PDF Viewer Modal (Renders Inline on Page) */}
-      {showResumeModal && (
-        <div className="modal-overlay" onClick={() => setShowResumeModal(false)}>
-          <div className="modal-content max-w-4xl" onClick={(e) => e.stopPropagation()}>
-            
-            {/* Modal Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#38bdf8]/10 text-[#38bdf8] flex items-center justify-center font-bold">
-                  <FileText size={22} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white font-heading">Ankit Verma — Resume / CV</h3>
-                  <p className="text-xs font-code text-[#38bdf8]">Computer Science &amp; Engineering • LPU</p>
-                </div>
-              </div>
-              
-              <button 
-                onClick={() => setShowResumeModal(false)} 
-                className="text-slate-400 hover:text-white p-2 bg-white/5 rounded-full cursor-pointer"
-              >
-                <X size={20} />
-              </button>
-            </div>
-
-            {/* Embedded Resume PDF iFrame (Loads local PDF inline seamlessly) */}
-            <div className="w-full bg-[#07090e] rounded-xl overflow-hidden border border-white/10 mb-4">
-              <iframe 
-                src="ankit_verma_cv.pdf"
-                title="Ankit Verma Resume CV"
-                className="w-full h-[540px] rounded-xl"
-              />
-            </div>
-
-            {/* Modal Footer Controls */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
-              <span className="text-xs font-code text-slate-400">
-                Official Curriculum Vitae
-              </span>
-
-              <div className="flex items-center gap-3">
-                <a 
-                  href={personal.resumeLink} 
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-code bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors"
-                >
-                  <ExternalLink size={14} />
-                  <span>Open on GitHub</span>
-                </a>
-
-                <a 
-                  href="ankit_verma_cv.pdf" 
-                  download="Ankit_Verma_CV.pdf" 
-                  className="btn-resume text-xs px-4 py-2"
-                >
-                  <Download size={14} />
-                  <span>Download CV</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      )}
 
     </section>
   );

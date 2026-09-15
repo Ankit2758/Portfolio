@@ -122,8 +122,8 @@ export default function Hero({ onThemeClick }) {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button 
                 onClick={() => setShowResumeModal(true)}
-                className="btn-resume text-sm px-5 py-2.5 cursor-pointer shadow-[0_0_20px_rgba(56,189,248,0.4)]"
-                title="View Ankit Verma's Resume"
+                className="btn-resume text-sm px-5 py-2.5 cursor-pointer shadow-[0_0_20px_rgba(56,189,248,0.4)] flex items-center gap-2"
+                title="View Ankit Verma's Resume on page"
               >
                 <Eye size={16} />
                 <span>Show Resume</span>
@@ -200,7 +200,7 @@ export default function Hero({ onThemeClick }) {
         </div>
       </div>
 
-      {/* Interactive Resume PDF Viewer Modal */}
+      {/* Interactive Resume PDF Viewer Modal (Renders Inline on Page) */}
       {showResumeModal && (
         <div className="modal-overlay" onClick={() => setShowResumeModal(false)}>
           <div className="modal-content max-w-4xl" onClick={(e) => e.stopPropagation()}>
@@ -212,8 +212,8 @@ export default function Hero({ onThemeClick }) {
                   <FileText size={22} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white font-heading">Ankit Verma — General CV</h3>
-                  <p className="text-xs font-code text-[#38bdf8]">Hosted officially on GitHub</p>
+                  <h3 className="text-lg font-bold text-white font-heading">Ankit Verma — Resume / CV</h3>
+                  <p className="text-xs font-code text-[#38bdf8]">Computer Science &amp; Engineering • LPU</p>
                 </div>
               </div>
               
@@ -225,11 +225,11 @@ export default function Hero({ onThemeClick }) {
               </button>
             </div>
 
-            {/* Embedded Resume PDF iFrame */}
+            {/* Embedded Resume PDF iFrame (Loads local PDF inline seamlessly) */}
             <div className="w-full bg-[#07090e] rounded-xl overflow-hidden border border-white/10 mb-4">
               <iframe 
-                src={personal.resumeRawLink}
-                title="Ankit Verma General CV"
+                src="ankit_verma_cv.pdf"
+                title="Ankit Verma Resume CV"
                 className="w-full h-[540px] rounded-xl"
               />
             </div>
@@ -237,7 +237,7 @@ export default function Hero({ onThemeClick }) {
             {/* Modal Footer Controls */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
               <span className="text-xs font-code text-slate-400">
-                Official Ankit General CV (2).pdf
+                Official Curriculum Vitae
               </span>
 
               <div className="flex items-center gap-3">
@@ -252,10 +252,8 @@ export default function Hero({ onThemeClick }) {
                 </a>
 
                 <a 
-                  href={personal.resumeRawLink} 
-                  target="_blank"
-                  rel="noreferrer"
-                  download="Ankit_General_CV.pdf" 
+                  href="ankit_verma_cv.pdf" 
+                  download="Ankit_Verma_CV.pdf" 
                   className="btn-resume text-xs px-4 py-2"
                 >
                   <Download size={14} />

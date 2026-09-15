@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* Exact Reference Styling - Midnight Dark Theme */
+:root {
+  --bg-midnight: #05070e;
+  --bg-card-dark: #0f1420;
+  --bg-card-border: rgba(255, 255, 255, 0.08);
+  
+  --accent-cyan: #38bdf8;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  
+  --gradient-blue: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #6366f1 100%);
+  --gradient-btn: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+}
+
+[data-theme="Midnight"] {
+  --bg-midnight: #05070e;
+  --accent-cyan: #38bdf8;
+  --gradient-btn: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+}
+
+[data-theme="Cyberpunk"] {
+  --bg-midnight: #090614;
+  --accent-cyan: #ec4899;
+  --gradient-btn: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+}
+
+[data-theme="Emerald"] {
+  --bg-midnight: #040d0a;
+  --accent-cyan: #10b981;
+  --gradient-btn: linear-gradient(135deg, #34d399 0%, #059669 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--bg-midnight);
+  color: #ffffff;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-midnight);
+  min-height: 100vh;
+  /* Subtle constellation network glow */
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(99, 102, 241, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 20% 90%, rgba(59, 130, 246, 0.06) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #05070e;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.font-code {
+  font-family: var(--font-code);
+}
+
+.gradient-text-reference {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing Blue Resume Button like in reference */
+.btn-resume {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-resume:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(59, 130, 246, 0.7);
+}
+
+/* Reference Card Styling */
+.ref-card {
+  background-color: #0f1420;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.ref-card-glow {
+  position: relative;
+}
+.ref-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(99, 102, 241, 0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Caret animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-caret {
+  animation: blink 1s infinite;
+}

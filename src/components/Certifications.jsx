@@ -128,7 +128,7 @@ export default function Certifications() {
               {/* PDF Embed iFrame */}
               <div className="w-full bg-[#07090e] rounded-xl overflow-hidden border border-white/10 mb-4">
                 <iframe 
-                  src={`/${selectedCertPdf.pdfName}`}
+                  src={selectedCertPdf.pdfName}
                   title={selectedCertPdf.title}
                   className="w-full h-[520px] rounded-xl"
                 />
@@ -142,7 +142,7 @@ export default function Certifications() {
 
                 <div className="flex items-center gap-3">
                   <a 
-                    href={`/${selectedCertPdf.pdfName}`} 
+                    href={selectedCertPdf.pdfName} 
                     download 
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-code bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors"
                   >

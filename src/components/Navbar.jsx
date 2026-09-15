@@ -74,7 +74,7 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
         {/* Right Controls: Download Resume Button + Theme Selector */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="/Ankit_Verma_CV.pdf"
+            href="ankit_verma_cv.pdf"
             download="Ankit_Verma_CV.pdf"
             className="btn-resume text-xs sm:text-sm px-4 py-2 cursor-pointer"
             title="Click to Download Resume PDF"
@@ -119,7 +119,7 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
         {/* Mobile Hamburger */}
         <div className="flex items-center gap-2 lg:hidden">
           <a
-            href="/Ankit_Verma_CV.pdf"
+            href="ankit_verma_cv.pdf"
             download="Ankit_Verma_CV.pdf"
             className="btn-resume text-xs px-3 py-1.5"
             title="Download Resume"

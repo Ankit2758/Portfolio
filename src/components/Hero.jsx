@@ -120,7 +120,6 @@ export default function Hero({ onThemeClick }) {
 
             {/* 3 Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              {/* Show Resume Button (Opens Resume PDF Viewer Modal) */}
               <button 
                 onClick={() => setShowResumeModal(true)}
                 className="btn-resume text-sm px-5 py-2.5 cursor-pointer shadow-[0_0_20px_rgba(56,189,248,0.4)]"
@@ -176,12 +175,12 @@ export default function Hero({ onThemeClick }) {
                 <div className="w-36 h-36 rounded-full p-1 bg-gradient-to-tr from-[#38bdf8] via-blue-500 to-indigo-500 shadow-[0_0_30px_rgba(56,189,248,0.4)]">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#07090e] flex items-center justify-center">
                     <img
-                      src="/developer_avatar_1789365501595.png"
+                      src="developer_avatar.png"
                       alt="Ankit Verma"
                       className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
+                        if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
                       }}
                     />
                     <div className="hidden w-full h-full bg-[#0b101a] items-center justify-center font-extrabold text-3xl text-[#38bdf8]">
@@ -233,7 +232,7 @@ export default function Hero({ onThemeClick }) {
             {/* Embedded Resume PDF iFrame */}
             <div className="w-full bg-[#07090e] rounded-xl overflow-hidden border border-white/10 mb-4">
               <iframe 
-                src="/Ankit_Verma_CV.pdf"
+                src="ankit_verma_cv.pdf"
                 title="Ankit Verma Resume CV"
                 className="w-full h-[540px] rounded-xl"
               />
@@ -247,7 +246,7 @@ export default function Hero({ onThemeClick }) {
 
               <div className="flex items-center gap-3">
                 <a 
-                  href="/Ankit_Verma_CV.pdf" 
+                  href="ankit_verma_cv.pdf" 
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-code bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors"
@@ -257,7 +256,7 @@ export default function Hero({ onThemeClick }) {
                 </a>
 
                 <a 
-                  href="/Ankit_Verma_CV.pdf" 
+                  href="ankit_verma_cv.pdf" 
                   download="Ankit_Verma_CV.pdf" 
                   className="btn-resume text-xs px-4 py-2"
                 >

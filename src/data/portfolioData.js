@@ -11,7 +11,7 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/Ankit-Verma",
     bio: "Computer Science undergraduate at Lovely Professional University with a passion for C++ problem solving, Python data analytics, Power BI dashboarding, and modern web application development. Skilled in building data-driven applications and efficient software systems.",
     availability: "Open for Internships & Projects",
-    resumeLink: "/Ankit_Verma_CV.pdf"
+    resumeLink: "ankit_verma_cv.pdf"
   },
 
   stats: [
@@ -30,7 +30,6 @@ export const portfolioData = {
       location: "Phagwara, Punjab, India",
       score: "CGPA: 6.80",
       type: "University",
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
       about: "Lovely Professional University (LPU) is one of India's premier multi-disciplinary universities, accredited NAAC A++ grade. Known for its massive 600+ acre modern campus, cutting-edge computing labs, global exposure, and industry-oriented computer science curriculum.",
       highlights: [
         "Specializing in Core Computer Science, Software Engineering, and Data Analytics.",
@@ -48,7 +47,6 @@ export const portfolioData = {
       location: "Lodhi Estate, New Delhi, India",
       score: "Percentage: 68%",
       type: "High School",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
       about: "Atal Adarsh Vidyalaya at Lodhi Estate is a renowned Delhi government model school offering high-standard STEM education with modern science laboratories, digital classrooms, and innovative Atal Tinkering Labs.",
       highlights: [
         "Specialized in Senior Secondary Science with Physics, Chemistry, and Mathematics (PCM).",
@@ -65,7 +63,6 @@ export const portfolioData = {
       location: "Sangam Vihar, New Delhi, India",
       score: "Percentage: 62%",
       type: "Secondary School",
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80",
       about: "Bal Niketan Public School in Sangam Vihar, New Delhi, provides quality secondary education focused on holistic development, mathematical problem solving, and early digital literacy.",
       highlights: [
         "Developed strong fundamentals in Science, Algebra, Geometry, and Information Technology.",
@@ -144,7 +141,7 @@ export const portfolioData = {
       issuedDate: "Sunday, August 31, 2025",
       status: "Completed & Verified",
       verifyUrl: "https://verify.onwingspan.com",
-      pdfName: "C++ Certificate.pdf",
+      pdfName: "cpp_certificate.pdf",
       description: "Comprehensive certification covering C++ syntax, Object-Oriented Programming (OOP), memory management, templates, pointers, and algorithm design.",
       skills: ["C++", "Object-Oriented Programming", "Data Structures", "Memory Management", "Algorithms"]
     },

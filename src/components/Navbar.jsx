@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Palette, ChevronDown, Menu, X } from 'lucide-react';
+import { Download, Palette, ChevronDown, Menu, X, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ activeTheme, setActiveTheme }) {
@@ -36,6 +36,8 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const { personal } = portfolioData;
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#05070e]/90 backdrop-blur-lg border-b border-white/10 py-3.5">
       <div className="container mx-auto px-4 max-w-7xl flex items-center justify-between">
@@ -71,13 +73,14 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
           })}
         </div>
 
-        {/* Right Controls: Download Resume Button + Theme Selector */}
+        {/* Right Controls: GitHub Hosted Resume Button + Theme Selector */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="ankit_verma_cv.pdf"
-            download="Ankit_Verma_CV.pdf"
+            href={personal.resumeLink}
+            target="_blank"
+            rel="noreferrer"
             className="btn-resume text-xs sm:text-sm px-4 py-2 cursor-pointer"
-            title="Click to Download Resume PDF"
+            title="Open Ankit Verma's Official Resume on GitHub"
           >
             <Download size={15} />
             <span>Download CV</span>
@@ -119,8 +122,9 @@ export default function Navbar({ activeTheme, setActiveTheme }) {
         {/* Mobile Hamburger */}
         <div className="flex items-center gap-2 lg:hidden">
           <a
-            href="ankit_verma_cv.pdf"
-            download="Ankit_Verma_CV.pdf"
+            href={personal.resumeLink}
+            target="_blank"
+            rel="noreferrer"
             className="btn-resume text-xs px-3 py-1.5"
             title="Download Resume"
           >

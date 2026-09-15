@@ -170,7 +170,7 @@ export default function Hero({ onThemeClick }) {
               
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#38bdf8]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[#38bdf8]/25 transition-all" />
 
-              {/* Circular Avatar with Ankit Verma's Actual Photo */}
+              {/* Circular Avatar */}
               <div className="relative mb-6">
                 <div className="w-36 h-36 rounded-full p-1 bg-gradient-to-tr from-[#38bdf8] via-blue-500 to-indigo-500 shadow-[0_0_30px_rgba(56,189,248,0.4)]">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#07090e] flex items-center justify-center">
@@ -212,8 +212,8 @@ export default function Hero({ onThemeClick }) {
                   <FileText size={22} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white font-heading">Ankit Verma — Resume / CV</h3>
-                  <p className="text-xs font-code text-[#38bdf8]">Computer Science &amp; Engineering • LPU</p>
+                  <h3 className="text-lg font-bold text-white font-heading">Ankit Verma — General CV</h3>
+                  <p className="text-xs font-code text-[#38bdf8]">Hosted officially on GitHub</p>
                 </div>
               </div>
               
@@ -228,8 +228,8 @@ export default function Hero({ onThemeClick }) {
             {/* Embedded Resume PDF iFrame */}
             <div className="w-full bg-[#07090e] rounded-xl overflow-hidden border border-white/10 mb-4">
               <iframe 
-                src="ankit_verma_cv.pdf"
-                title="Ankit Verma Resume CV"
+                src={personal.resumeRawLink}
+                title="Ankit Verma General CV"
                 className="w-full h-[540px] rounded-xl"
               />
             </div>
@@ -237,27 +237,29 @@ export default function Hero({ onThemeClick }) {
             {/* Modal Footer Controls */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
               <span className="text-xs font-code text-slate-400">
-                Official Curriculum Vitae (PDF)
+                Official Ankit General CV (2).pdf
               </span>
 
               <div className="flex items-center gap-3">
                 <a 
-                  href="ankit_verma_cv.pdf" 
+                  href={personal.resumeLink} 
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-code bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors"
                 >
                   <ExternalLink size={14} />
-                  <span>Open in New Tab</span>
+                  <span>Open on GitHub</span>
                 </a>
 
                 <a 
-                  href="ankit_verma_cv.pdf" 
-                  download="Ankit_Verma_CV.pdf" 
+                  href={personal.resumeRawLink} 
+                  target="_blank"
+                  rel="noreferrer"
+                  download="Ankit_General_CV.pdf" 
                   className="btn-resume text-xs px-4 py-2"
                 >
                   <Download size={14} />
-                  <span>Download Resume</span>
+                  <span>Download CV</span>
                 </a>
               </div>
             </div>

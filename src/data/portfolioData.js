@@ -11,7 +11,8 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/Ankit-Verma",
     bio: "Computer Science undergraduate at Lovely Professional University with a passion for C++ problem solving, Python data analytics, Power BI dashboarding, and modern web application development. Skilled in building data-driven applications and efficient software systems.",
     availability: "Open for Internships & Projects",
-    resumeLink: "ankit_verma_cv.pdf"
+    resumeLink: "https://github.com/Ankit2758/Cv/blob/main/Ankit%20General%20CV%20(2).pdf",
+    resumeRawLink: "https://raw.githubusercontent.com/Ankit2758/Cv/main/Ankit%20General%20CV%20(2).pdf"
   },
 
   stats: [
